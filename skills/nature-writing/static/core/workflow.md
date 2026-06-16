@@ -35,10 +35,11 @@ Drafting a full section on a wrong assumed premise wastes the whole draft and is
 
 Then wait for the user to confirm or correct before drafting the full section.
 
-Two shortcuts:
+Shortcuts:
 
 - **Skip the gate** when the core claim, evidence, and boundary are all clearly given and there is no real ambiguity in framing. In that case just state the one-sentence argument in a single line (per the router) and proceed.
-- **Style, not substance**: if the user says the voice or style "is not mine", do not keep guessing — ask for one short sample of their own writing to match.
+- **Depth dial**: for a full section or a major rewrite, offer to deliver the outline first (the paragraph map from step 3) and expand to full prose only after the user approves it. Reacting to an outline is far cheaper than reacting to full prose. Skip this for short or single-paragraph requests.
+- **Style, not substance**: if the user says the voice or style "is not mine", do not keep guessing — ask for one short sample of their own writing, then calibrate to it. From the sample, match: typical sentence length and rhythm, hedging level (`demonstrate` vs `may` / `could`), preferred connectives and transitions, person (first-person `we` vs passive), and terminology / abbreviation choices. Match the voice, not the content — never reuse the sample's claims or facts.
 
 ## 4. Draft from evidence outward
 
