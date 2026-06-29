@@ -7,7 +7,7 @@ max 3 revision rounds reached
 two consecutive score improvements < 0.5
 evidence needed for a key claim is missing
 specialist conflict cannot be honestly resolved
-JL's target for the current deliverable is reached
+The user's target for the current deliverable is reached
 ```
 
 When stopping, report:

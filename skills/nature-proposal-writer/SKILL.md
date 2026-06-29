@@ -1,5 +1,5 @@
 ---
-name: nature-proposal-writer
+name: researchwrite
 description: |
   Proposal-first scientific writing pipeline. Three modes (compose/revise/hybrid) with four-layer QA pipeline. Enforces evidence-before-prose, argument-before-sections, and contracts-before-paragraphs.
 version: 1.0.0
@@ -8,10 +8,10 @@ license: MIT
 metadata:
   hermes:
     tags: [research, writing, proposal, revision, qa, multi-agent]
-    related_skills: [nature-polishing, nature-figure, professor, brainstorming]
+    related_skills: [brainstorming, professor, avoid-ai-writing, docx]
 ---
 
-# nature-proposal-writer — proposal-first 科研写作 pipeline
+# researchwrite — proposal-first 科研写作 pipeline
 
 受 autonovel（状态机+打分）、professor（动态专家）、brainstorming（入口追问）、anti-AI-writing（语言清理）启发的科研写作状态机。**不是通用"帮我写论文"prompt。**
 
@@ -58,32 +58,20 @@ qa_logs/                  诊断、专家审查、anti-slop、打分记录
 exports/                  最终输出（.md + .docx）
 ```
 
-新建项目时从 `templates/` 取空模板，参考 `examples/quaternary-chloride-part1/` 了解填写深度。
+新建项目时从 `templates/` 取空模板。`references/worked-example-quaternary-proposal.md` 提供了基于通用材料科学领域的完整填写示例。
 
 ## Reference 文件索引
 
-| Reference | 加载时机 |
-|---|---|
-| `references/compose-mode.md` | 模式 = compose（9 步） |
-| `references/revise-mode.md` | 模式 = revise（9 步） |
-| `references/hybrid-mode.md` | 模式 = hybrid |
-| `references/evaluation-rubric.md` | 任何需要打分的时候（8 维 × 4 锚点） |
-| `references/research-anti-slop.md` | 中文 proposal 语言清理 |
-| `references/chinese-review-writing-style.md` | 中文综述写作风格 |
-| `references/stopping-rules.md` | 迭代循环控制 |
-| `references/professor-dispatch.md` | 需要专家审查时 |
+公开版本包含四个关键 reference：
+
+| Reference | 用途 |
+|---|------|
+| `references/evaluation-rubric.md` | 8 维 × 4 锚点评分体系 + 评分流程 |
+| `references/stopping-rules.md` | 迭代循环终止条件 |
 | `references/foundation-files.md` | 建立 foundation 五文件 |
-| `references/project-structure.md` | 项目目录和 state.json 格式 |
-| `references/export-archive.md` | 导出 .md + .docx |
-| `references/partial-proposal-scope.md` | 分阶段写作，防范围蔓延 |
-| `references/ref-renumbering-cascade.md` | docx 参考文献重编号 |
-| `references/review-paper-framework.md` | 综述论文框架设计 |
-| `references/review-critique-methodology.md` | 综述批判方法论 |
 | `references/validation-checklist.md` | 自动校验清单 |
-| `references/gpt-handoff-revision-brief.md` | GPT 交接修订简报 |
-| `references/within-approved-proposal.md` | 本子框架内写作约束 |
-| `references/worked-example-quaternary-proposal.md` | 完整示例 |
-| `references/降承诺提案模式.md` | 降承诺写作策略 |
+
+> 完整 reference 文件（compose/revise/hybrid 模式详解、专家分派、导出归档、综述框架等 12 份）未包含在公开版本中。如需获取，请通过 [GitHub issue](https://github.com/Jiahao8595/research-pipeline/issues) 或邮件联系作者。
 
 ## 运行交付
 
@@ -113,7 +101,7 @@ exports/                  最终输出（.md + .docx）
 Gate 2: professor Convener（内容层）
   ├── 论文 → 方法论专家 + 领域专家
   ├── proposal → 可行性专家 + 创新性专家
-  └── 文献综述 → 覆盖面专家 + 批判深度专家
+  └── 文献reviews → 覆盖面专家 + 批判深度专家
   │
   ▼
 Gate 1: avoid-ai-writing 模式 detect-only

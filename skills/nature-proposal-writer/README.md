@@ -1,4 +1,4 @@
-# nature-proposal-writer
+# researchwrite
 
 Proposal-first 科研写作状态机。不是"帮我写论文"——它强制执行写作前的论证架构，写完跑四层 QA pipeline。
 
@@ -43,33 +43,30 @@ Gate 4: 评分阈值（≥7.0 通过，<7.0 定向回退 ≤3 轮）
 ## 安装
 
 ```bash
-# Codex
-请从这个仓库安装 nature-proposal-writer：
-https://github.com/Yuan1z0825/nature-skills.git
-请把 skills/nature-proposal-writer/ 完整安装，包括 references/ 和 templates/
-
 # Hermes / Claude Code
-git clone https://github.com/Yuan1z0825/nature-skills.git
-cp -r nature-skills/skills/nature-proposal-writer ~/.hermes/skills/research/
+git clone https://github.com/Jiahao8595/research-pipeline.git
+cp -r research-pipeline/researchwrite ~/.hermes/skills/
 ```
+
+安装后 `/reload-skills`。
 
 **前置依赖：**
 
 ```bash
-hermes skills install nature-polishing    # 语言润色
-hermes skills install nature-figure      # 图表制作
-hermes skills install professor          # 动态专家审查
-hermes skills install brainstorming      # 入口追问
+hermes skills install brainstorm     # 入口追问
+hermes skills install professor      # 动态专家审查
+hermes skills install avoid-ai-writing  # 英文去 AI 味
+hermes skills install docx           # Word 文档导出
 ```
 
 ## 使用示例
 
 ```
 # 从零写 proposal
-"用 nature-proposal-writer 帮我写一个关于钙钛矿稳定性优化的研究计划"
+"用 researchwrite 帮我写一个关于钙钛矿稳定性优化的研究计划"
 
 # 审查已有文本
-"用 nature-proposal-writer 审查这段 discussion，paper 挡位"
+"用 researchwrite 审查这段 discussion，paper 挡位"
 
 # 快速扫读
 "快速扫一下这个摘要"（只标记问题，不全跑 QA）
@@ -84,44 +81,31 @@ hermes skills install brainstorming      # 入口追问
 | `internal` | 内部汇报 | 5.0 | 跳过专家审查 |
 | `quick` | 快速扫读 | — | 只标记 P0 问题 |
 
-## 与 nature-skills 生态的关系
-
-- 草稿写完后 → 用 `nature-polishing` 润色英文
-- 需要配图 → 用 `nature-figure` 制图
-- 需要文献支撑 → 用 `nature-literature-pipeline` 补充引用
-- 审稿人反馈 → 用 `nature-reviewer` 模拟预审
-
 ## 文件结构
 
 ```
-nature-proposal-writer/
-├── SKILL.md                           ← 技能入口
-├── README.md                          ← 本文件
+researchwrite/
+├── SKILL.md                       ← 技能入口
+├── README.md                      ← 本文件
 ├── references/
-│   ├── compose-mode.md                ← compose 模式 9 步流程
-│   ├── revise-mode.md                 ← revise 模式 9 步流程
-│   ├── hybrid-mode.md                 ← hybrid 组合模式
-│   ├── evaluation-rubric.md           ← 8 维 × 4 锚点评分体系
-│   ├── research-anti-slop.md          ← 中文 proposal 语言清理
-│   ├── chinese-review-writing-style.md ← 中文综述写作风格
-│   ├── stopping-rules.md              ← 迭代循环控制
-│   ├── professor-dispatch.md          ← 专家审查分派
-│   ├── foundation-files.md            ← 基础文件建立
-│   ├── project-structure.md           ← 项目目录和状态格式
-│   ├── export-archive.md              ← .md + .docx 导出
-│   ├── partial-proposal-scope.md      ← 分阶段写作范围控制
-│   ├── ref-renumbering-cascade.md     ← 参考文献重编号
-│   ├── review-paper-framework.md      ← 综述论文框架设计
-│   ├── review-critique-methodology.md ← 综述批判方法论
-│   ├── validation-checklist.md        ← 自动校验清单
-│   ├── gpt-handoff-revision-brief.md  ← 交接修订简报
-│   ├── within-approved-proposal.md    ← 本子框架内写作约束
-│   ├── worked-example-proposal.md     ← 完整示例
-│   └── 降承诺提案模式.md              ← 降承诺写作策略
+│   ├── evaluation-rubric.md       ← 8 维 × 4 锚点评分体系
+│   ├── stopping-rules.md          ← 迭代终止条件
+│   ├── foundation-files.md        ← 建立 foundation 五文件
+│   └── validation-checklist.md    ← 自动校验清单
 ├── scripts/
-│   └── build_proposal_docx.py         ← .md → .docx 构建脚本
-└── templates/                         ← 空模板（新建项目用）
+│   └── build_proposal_docx.py     ← .md → .docx 构建脚本
+└── templates/                     ← 空模板（新建项目用）
+    ├── 00_scope.md
+    ├── 01_research_canon.md
+    ├── 02_evidence_table.md
+    ├── 03_argument_map.md
+    ├── 04_section_contracts.md
+    ├── 05_style_guide.md
+    ├── qa_report.md
+    └── revision_brief.md
 ```
+
+> **完整 reference 文件**（compose/revise/hybrid 模式详解、专家分派、导出归档、综述框架等 12 份）未包含在公开版本中。如需获取，请通过 [GitHub issue](https://github.com/Jiahao8595/research-pipeline/issues) 或邮件联系作者。
 
 ## 作者
 
