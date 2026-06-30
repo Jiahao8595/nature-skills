@@ -22,11 +22,15 @@
   <tr>
     <td align="center">
       <b>视频教程请关注抖音</b><br>
-      <img width="500" alt="635611d42c5739d8a98ea08eec010d30" src="https://github.com/user-attachments/assets/37d4b0b6-3d22-4492-bb01-c0d9bae5a9e0" />
+      <img width="300" alt="635611d42c5739d8a98ea08eec010d30" src="https://github.com/user-attachments/assets/37d4b0b6-3d22-4492-bb01-c0d9bae5a9e0" />
     </td>
     <td align="center">
+      <b>知识星球50¥/年</b><br>
+      <img width="300" alt="aaa39bcfddacc2d92a5922b50b5edf46" src="https://github.com/user-attachments/assets/7a7e467a-59d4-4514-9b42-eefd01bf9591" />
+    </td> 
+    <td align="center">
       <b>Agent科研交流群</b><br>
-      <img width="500" alt="Agent科研交流群" src="https://github.com/user-attachments/assets/28d1886a-69be-46bc-a1cb-777d7510ddab" />
+      <img width="300" alt="Agent科研交流群" src="https://github.com/user-attachments/assets/28d1886a-69be-46bc-a1cb-777d7510ddab" />
     </td>
   </tr>
 </table>
